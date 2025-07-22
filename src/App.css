@@ -1,41 +1,157 @@
+/* Base Styles */
 :root {
-  --primary-blue: #2563EB;
-  --accent-green: #10B981;
-  --dark-charcoal: #1F2937;
-  --medium-gray: #6B7280;
-  --light-gray-bg: #F8F9FA;
-  --white: #FFFFFF;
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #93c5fd;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --background: #ffffff;
+  --background-alt: #f8fafc;
+  --border: #e2e8f0;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--white);
-  color: var(--dark-charcoal);
-}```
-
-### **2. Font Selection: Clarity and Modernity**
-
-The font choice is critical for readability and conveying a modern aesthetic. Avoid overly decorative or generic fonts.
-
-*   **Headings Font (Serif or Sans-Serif):**
-    *   **Sans-Serif (Modern, Clean - Recommended):** **Inter**, **Lexend**, or **Poppins**. These are very popular in tech right now for their clean, geometric look. They are available for free on Google Fonts.
-    *   **Serif (Trustworthy, Established):** **Lora** or **Merriweather**. A serif font for headings can add a touch of classic authority, which can pair nicely with a sans-serif body font.
-*   **Body Font (Sans-Serif is a must):**
-    *   The most important thing here is readability. **Inter** is fantastic for both headings and body text. **Lato** or **Open Sans** are also excellent, safe choices.
-
-**Actionable Step:**
-1.  Go to [Google Fonts](https://fonts.google.com/ ).
-2.  Find "Inter" and "Poppins".
-3.  Click "Get font" and then "Get embed code".
-4.  Copy the `<link>` tags it gives you and paste them into your `public/index.html` file, inside the `<head>` section.
-5.  Update your CSS to use these new fonts.
-
-```css
-/* In your main CSS file (e.g., App.css) */
-body {
-  font-family: 'Inter', sans-serif; /* Use Inter for body text */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+               Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+main {
+  flex: 1;
+  padding-top: 80px;
+}
+
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif; /* Use Poppins for headings */
-  color: var(--dark-charcoal);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text);
 }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Layout Components */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Font Imports */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' );
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' );
