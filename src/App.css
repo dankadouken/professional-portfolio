@@ -1,0 +1,41 @@
+:root {
+  --primary-blue: #2563EB;
+  --accent-green: #10B981;
+  --dark-charcoal: #1F2937;
+  --medium-gray: #6B7280;
+  --light-gray-bg: #F8F9FA;
+  --white: #FFFFFF;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark-charcoal);
+}```
+
+### **2. Font Selection: Clarity and Modernity**
+
+The font choice is critical for readability and conveying a modern aesthetic. Avoid overly decorative or generic fonts.
+
+*   **Headings Font (Serif or Sans-Serif):**
+    *   **Sans-Serif (Modern, Clean - Recommended):** **Inter**, **Lexend**, or **Poppins**. These are very popular in tech right now for their clean, geometric look. They are available for free on Google Fonts.
+    *   **Serif (Trustworthy, Established):** **Lora** or **Merriweather**. A serif font for headings can add a touch of classic authority, which can pair nicely with a sans-serif body font.
+*   **Body Font (Sans-Serif is a must):**
+    *   The most important thing here is readability. **Inter** is fantastic for both headings and body text. **Lato** or **Open Sans** are also excellent, safe choices.
+
+**Actionable Step:**
+1.  Go to [Google Fonts](https://fonts.google.com/ ).
+2.  Find "Inter" and "Poppins".
+3.  Click "Get font" and then "Get embed code".
+4.  Copy the `<link>` tags it gives you and paste them into your `public/index.html` file, inside the `<head>` section.
+5.  Update your CSS to use these new fonts.
+
+```css
+/* In your main CSS file (e.g., App.css) */
+body {
+  font-family: 'Inter', sans-serif; /* Use Inter for body text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Use Poppins for headings */
+  color: var(--dark-charcoal);
+}
